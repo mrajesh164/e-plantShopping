@@ -6,7 +6,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const ProductList = createSlice({
     name: product
-    initialState: [{
+    [{
         name: "",
         image: "",
         description: "",
