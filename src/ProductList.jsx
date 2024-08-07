@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 import addItem from './CartSlice';
 import { createSlice } from '@reduxjs/toolkit';
 
-export const ProductList = createSlice({
+export const productList = createSlice({
     name: product
     [{
         name: "",
