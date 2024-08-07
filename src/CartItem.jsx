@@ -3,9 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
 
+var totalNum = 0;
+
 const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
+
+
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = (cart) => {
@@ -28,6 +32,9 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleIncrement = (item) => {
     item.quantity++;
+    if (item.quantity == 1) {
+        totalNum++;
+    }
     dispatch(updateQuantity(item));
   };
 
@@ -41,6 +48,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleRemove = (item) => {
+    totalNum--;
     dispatch(removeItem(item));
   };
 
