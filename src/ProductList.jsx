@@ -7,9 +7,9 @@ import { createSlice } from '@reduxjs/toolkit';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-    const [addedToCart, setAddedToCart] = useState({}); // Tracks which products are added to the cart
+    
 
-    const plantsArray = useState([
+    const plantsArray = [
         {
             category: "Air Purifying Plants",
             plants: [
@@ -215,7 +215,7 @@ function ProductList() {
                 }
             ]
         }
-    ]);
+    ];
    const styleObj={
     backgroundColor: '#4CAF50',
     color: '#fff!important',
