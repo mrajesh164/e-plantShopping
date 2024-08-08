@@ -4,25 +4,12 @@ import CartItem from './CartItem';
 import addItem from './CartSlice';
 import { createSlice } from '@reduxjs/toolkit';
 
-export const productList = createSlice({
-    name: product
-    [{
-        name: "",
-        image: "",
-        description: "",
-        cost: 0
-    }], 
-    reducers: {
-
-    }
-}) 
-
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({}); // Tracks which products are added to the cart
 
-    const plantsArray = [
+    const plantsArray = useState([
         {
             category: "Air Purifying Plants",
             plants: [
@@ -228,7 +215,7 @@ function ProductList() {
                 }
             ]
         }
-    ];
+    ]);
    const styleObj={
     backgroundColor: '#4CAF50',
     color: '#fff!important',

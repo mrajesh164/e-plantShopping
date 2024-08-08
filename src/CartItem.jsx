@@ -35,16 +35,14 @@ const CartItem = ({ onContinueShopping }) => {
     if (item.quantity == 1) {
         totalNum++;
     }
-    dispatch(updateQuantity(item));
+    dispatch(updateQuantity({name: item.name, quantity: item.quantity}));
   };
 
   const handleDecrement = (item) => {
-   item.quantity--;
-   if (item.quantity == 0) {
-    dispatch(removeItem(item));
-   } else {
-    dispatch(updateQuantity(item));
-   }
+   if (item.quantity > 1) {
+    item.quantity--;
+    dispatch(updateQuantity({name: item.name, quantity: item.quantity}));
+   } 
   };
 
   const handleRemove = (item) => {
@@ -85,7 +83,7 @@ const CartItem = ({ onContinueShopping }) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)}>Checkout</button>
       </div>
     </div>
   );
